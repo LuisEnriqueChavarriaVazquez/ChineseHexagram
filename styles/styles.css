@@ -1,11 +1,26 @@
 .contenedorSuperior{
     display: inline-block;
      width:100%;
+     margin:10px;
+     
   
+  }
+
+  .contenedorInformacion{
+    border:1px solid #C00;
+    width:30%;
+    padding:10px;
+  }
+
+  #tituloPanelEntradadDatos{
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(110, 226, 120);
   }
   
   .panelInformacion{
-    width:30%;
+     width:100%;
     height:50px;
     display: block;
   }
@@ -17,4 +32,15 @@
     margin-left:10px;
     padding: 1vh;
    border-radius: 18px;
+  }
+
+  .grupoBotones{
+    margin:30px;
+  }
+  .grupoBotones input[type=button]{
+    background-color: rgb(235, 176, 88);
+    border-width:0px;
+    margin:0px;
+    padding:10px;
+    border-radius: 18px;
   }
