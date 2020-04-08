@@ -1,0 +1,17 @@
+.contenedorSuperior{
+    display: inline-block;
+     width:100%;
+     background-color: aqua;
+  }
+  
+  .panelInformacion{
+    width:30%;
+    height:200px;
+    background-color:red;
+  }
+  
+  .panelInformacion input[type=text]{
+    text-align: center;
+    margin-top:18px;
+    width:90%;
+  }
