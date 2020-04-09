@@ -37,6 +37,12 @@
  
     border-style: none;
     font-size: .9em;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  }
+
+  .panelInformacion input[type=text]:focus{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   }
 
   .panelButtons{
@@ -50,8 +56,6 @@
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
  }
 
- .panelButtons:hover{
-}
 
 .panelButtons input[type=button]{
   background-color: rgb(0, 124, 72);
