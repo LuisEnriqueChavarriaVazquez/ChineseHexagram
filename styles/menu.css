@@ -1,0 +1,19 @@
+.mainMenu{
+    width: 100%;
+    position: fixed;}
+
+.menu{
+    height:60px;
+    background-color: rgb(0, 124, 72);
+    box-shadow: 0 1px 10px rgba(0,0,0,0.12), 0 1px 10px rgba(0,0,0,0.24);
+}
+
+.menu > div{
+    height: 60px;
+    color: #fff;
+    font-size: 1em;
+    margin: 0px 20px 0px 20px;
+
+    display: flex;
+    align-items: center;
+}
