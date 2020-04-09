@@ -5,7 +5,7 @@
 .menu{
     height:60px;
     background-color: rgb(0, 124, 72);
-    box-shadow: 0 1px 10px rgba(0,0,0,0.12), 0 1px 10px rgba(0,0,0,0.24);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 0px 0px rgba(0,0,0,0.23);
 }
 
 .menu > div{

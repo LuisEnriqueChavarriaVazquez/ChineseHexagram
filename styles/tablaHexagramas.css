@@ -1,0 +1,62 @@
+.padreInferior{
+    display: flex;
+    justify-content: center;
+}
+  
+.contenedorInferior{
+    width:100%;
+    padding: 0px 200px 50px 200px;
+  }
+  
+.TablaSimbolos{
+    border-collapse: collapse;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    border-radius: 15px;
+}
+  
+.TablaNumeros{
+    background-color: rgb(3, 122, 73);
+    font-size: 1.5em;
+    transition: all 0.1s cubic-bezier(.25,.8,.25,1);
+    text-align: center;
+}
+
+.TablaNumeros:hover{
+    background-color: rgb(0, 148, 86);
+    font-weight: 900;
+    font-size: 3em;
+    text-shadow: 0px 1px 10px rgb(53, 53, 53);
+}
+
+.SimbolosTabla{
+    background-color: rgb(0, 102, 60);
+    width: 200px;
+    line-height: 13px;
+    font-size: 1em;
+    font-weight: 600;
+    padding:5px 5px 15px 5px !important;
+}
+
+.titleCelda{
+    line-height: 30px !important;
+    background-color: rgb(0, 95, 55);
+    padding: 5px !important;
+}
+
+.TablaNumeros,.TablaSimbolos{
+    text-align: center;
+    font-family: PBR,Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+}
+
+/*Border table*/
+.supIzq{border-top-left-radius: 10px;}
+.supDer{border-top-right-radius: 10px;}
+.infIzq{border-bottom-left-radius: 10px;}
+.infDer{border-bottom-right-radius: 10px;}
+
+/*Cuando se activa la animacion se pone el color on*/
+
+.colorOn{
+    text-align: center;
+}
