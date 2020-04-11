@@ -122,9 +122,9 @@ function insertarElementosEnElHexagramaTres(nuevoArrayNoMutanteInvertido){
         }else if(nuevoArrayNoMutanteInvertido[i] == 9){
             parrafoHexagrama3[i].innerHTML = '------- -------';
         }else if(nuevoArrayNoMutanteInvertido[i] == 7){
-            parrafoHexagrama3[i].innerHTML = '------- -------';
-        }else if(nuevoArrayNoMutanteInvertido[i] == 8){
             parrafoHexagrama3[i].innerHTML = '---------------';
+        }else if(nuevoArrayNoMutanteInvertido[i] == 8){
+            parrafoHexagrama3[i].innerHTML = '------- -------';
         }
     }
 
@@ -134,3 +134,4 @@ function insertarElementosEnElHexagramaTres(nuevoArrayNoMutanteInvertido){
 //Sección 3 // Asignar un tipo de HEXAGRAMA
 
 var tiposHexagramas = ["Ch'len","K'un","Chun","Meng","Hsü"];
+
