@@ -50,6 +50,7 @@ function limpiarLosValores(primerInput,segundoInput,tercerInput){
 var hexagramas = document.getElementsByClassName('hexagrama'); /*este es un array que almacena los 3 hexagramas*/
 var parrafoHexagrama1 = document.getElementsByClassName('parrafHexagrama1');
 var parrafoHexagrama2 = document.getElementsByClassName('parrafHexagrama2');
+var parrafoHexagrama3 = document.getElementsByClassName('parrafHexagrama3');
 var contadorDeParrafos = 5; /*Indicara que parrafo debe ser llenado*/
 var contadorNoMutante = 0; /*Sirve para ingresar valores en la matriz de comprobacion de los no mutantes*/ 
 
@@ -88,7 +89,7 @@ function insertarElementosEnElHexagramaUno(valorTotalDeLineaDeHexagrama){
     return contadorDeParrafos;
 }
 
-
+var nuevoArrayNoMutanteInvertido;
 /*Para el segundo HEXAGRAMA // LE QUITAMOS LO MUTANTE*/
 function insertarElementosEnElHexagramaDos(noMutante){
 
@@ -104,8 +105,29 @@ function insertarElementosEnElHexagramaDos(noMutante){
             parrafoHexagrama2[i].innerHTML = '------- -------';
         }
     }
+
+    parrafoHexagrama2[6].innerHTML = 'tipo';
+
+    insertarElementosEnElHexagramaTres(nuevoArrayNoMutanteInvertido);
 }
 
-/**/
+/*Para el tercer hexagrama solamente tenemos que invertir las lineas obtenidas*/
+
+function insertarElementosEnElHexagramaTres(nuevoArrayNoMutanteInvertido){
+
+    for(var i = 0; i <= 5; i++){
+        if( nuevoArrayNoMutanteInvertido[i] == 6){
+            parrafoHexagrama3[i].innerHTML = '---------------';
+        }else if(nuevoArrayNoMutanteInvertido[i] == 9){
+            parrafoHexagrama3[i].innerHTML = '------- -------';
+        }else if(nuevoArrayNoMutanteInvertido[i] == 7){
+            parrafoHexagrama3[i].innerHTML = '------- -------';
+        }else if(nuevoArrayNoMutanteInvertido[i] == 8){
+            parrafoHexagrama3[i].innerHTML = '---------------';
+        }
+    }
+
+    parrafoHexagrama3[6].innerHTML = 'tipo';
+}
 
 //Sección 2 // METER LOS TEXTOS EN EL HEXAGRAMA
