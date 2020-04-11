@@ -49,25 +49,63 @@ function limpiarLosValores(primerInput,segundoInput,tercerInput){
 
 var hexagramas = document.getElementsByClassName('hexagrama'); /*este es un array que almacena los 3 hexagramas*/
 var parrafoHexagrama1 = document.getElementsByClassName('parrafHexagrama1');
+var parrafoHexagrama2 = document.getElementsByClassName('parrafHexagrama2');
 var contadorDeParrafos = 5; /*Indicara que parrafo debe ser llenado*/
+var contadorNoMutante = 0; /*Sirve para ingresar valores en la matriz de comprobacion de los no mutantes*/ 
+
+
+/*Var para validar si es mutante o no*/
+var noMutante = [];
 
 /*Para el PRIMER HEXAGRAMA*/
 function insertarElementosEnElHexagramaUno(valorTotalDeLineaDeHexagrama){
     if(valorTotalDeLineaDeHexagrama == 6){
+        noMutante[contadorNoMutante] = 6;
         parrafoHexagrama1[contadorDeParrafos].innerHTML = '-------X-------'; // valor de 6
     }else if(valorTotalDeLineaDeHexagrama == 7){
+        noMutante[contadorNoMutante] = 7;
         parrafoHexagrama1[contadorDeParrafos].innerHTML = '----------------';  // valor de 7 o de 9 sin el 0
     }else if(valorTotalDeLineaDeHexagrama == 8){
-        parrafoHexagrama1[contadorDeParrafos].innerHTML = '--------  --------'; // valor de 8 o de 6 sin la x
+        noMutante[contadorNoMutante] = 8;
+        parrafoHexagrama1[contadorDeParrafos].innerHTML = '-------- --------'; // valor de 8 o de 6 sin la x
     }else if(valorTotalDeLineaDeHexagrama == 9){
+        noMutante[contadorNoMutante] = 9;
         parrafoHexagrama1[contadorDeParrafos].innerHTML = '------O-------'; // valor de 9
     }
 
     //Aqui pondremos que tipo de Hexagrama es
     if(contadorDeParrafos == 0){
-        parrafoHexagrama1[6].innerHTML = 'tipo' // valor de 9
+        if(noMutante.includes(6) || noMutante.includes(9)){
+            parrafoHexagrama1[6].innerHTML = '' // EN CASO DE SER MUTANTE
+            insertarElementosEnElHexagramaDos(noMutante);
+        }else{
+            parrafoHexagrama1[6].innerHTML = 'tipo' // El tipo de HEXAGRAMA EN CASO DE SER NO MUTANTE
+        }
     }
 
+    contadorNoMutante++;
     contadorDeParrafos = contadorDeParrafos  - 1;
     return contadorDeParrafos;
 }
+
+
+/*Para el segundo HEXAGRAMA // LE QUITAMOS LO MUTANTE*/
+function insertarElementosEnElHexagramaDos(noMutante){
+
+    nuevoArrayNoMutanteInvertido = noMutante.reverse();
+    for(var i = 0; i <= 5; i++){
+        if( nuevoArrayNoMutanteInvertido[i] == 6){
+            parrafoHexagrama2[i].innerHTML = '------- -------';
+        }else if(nuevoArrayNoMutanteInvertido[i] == 9){
+            parrafoHexagrama2[i].innerHTML = '---------------';
+        }else if(nuevoArrayNoMutanteInvertido[i] == 7){
+            parrafoHexagrama2[i].innerHTML = '---------------';
+        }else if(nuevoArrayNoMutanteInvertido[i] == 8){
+            parrafoHexagrama2[i].innerHTML = '------- -------';
+        }
+    }
+}
+
+/**/
+
+//Sección 2 // METER LOS TEXTOS EN EL HEXAGRAMA
