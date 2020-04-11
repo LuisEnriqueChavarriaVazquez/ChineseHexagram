@@ -54,6 +54,8 @@ var parrafoHexagrama2 = document.getElementsByClassName('parrafHexagrama2');
 var parrafoHexagrama3 = document.getElementsByClassName('parrafHexagrama3');
 var contadorDeParrafos = 5; /*Indicara que parrafo debe ser llenado*/
 var contadorNoMutante = 0; /*Sirve para ingresar valores en la matriz de comprobacion de los no mutantes*/ 
+var botonEliLinea=document.getElementById('button2');//Boton para elminiar lineas
+var botonInserLinea=document.getElementById('button1');//Boton para insertar lineas
 
 
 /*Var para validar si es mutante o no*/
@@ -61,6 +63,8 @@ var noMutante = [];
 
 /*Para el PRIMER HEXAGRAMA*/
 function insertarElementosEnElHexagramaUno(valorTotalDeLineaDeHexagrama){
+    botonEliLinea.disabled=false;
+    botonEliLinea.style.backgroundColor="rgb(0, 124, 72)";
     if(valorTotalDeLineaDeHexagrama == 6){
         noMutante[contadorNoMutante] = 6;
         parrafoHexagrama1[contadorDeParrafos].innerHTML = '-------X-------'; // valor de 6
@@ -72,7 +76,7 @@ function insertarElementosEnElHexagramaUno(valorTotalDeLineaDeHexagrama){
         parrafoHexagrama1[contadorDeParrafos].innerHTML = '-------- --------'; // valor de 8 o de 6 sin la x
     }else if(valorTotalDeLineaDeHexagrama == 9){
         noMutante[contadorNoMutante] = 9;
-        parrafoHexagrama1[contadorDeParrafos].innerHTML = '------O-------'; // valor de 9
+        parrafoHexagrama1[contadorDeParrafos].innerHTML = '-------O-------'; // valor de 9
     }
 
     //Aqui pondremos que tipo de Hexagrama es
@@ -80,9 +84,12 @@ function insertarElementosEnElHexagramaUno(valorTotalDeLineaDeHexagrama){
         if(noMutante.includes(6) || noMutante.includes(9)){
             parrafoHexagrama1[6].innerHTML = '' // EN CASO DE SER MUTANTE
             insertarElementosEnElHexagramaDos(noMutante);
+            
         }else{
             parrafoHexagrama1[6].innerHTML = 'tipo' // El tipo de HEXAGRAMA EN CASO DE SER NO MUTANTE
         }
+        botonInserLinea.disabled=true;
+        botonInserLinea.style.backgroundColor="rgb(224, 121, 117)";
     }
 
     contadorNoMutante++;
@@ -93,8 +100,8 @@ function insertarElementosEnElHexagramaUno(valorTotalDeLineaDeHexagrama){
 var nuevoArrayNoMutanteInvertido;
 /*Para el segundo HEXAGRAMA // LE QUITAMOS LO MUTANTE*/
 function insertarElementosEnElHexagramaDos(noMutante){
-
-    nuevoArrayNoMutanteInvertido = noMutante.reverse();
+    var copiaNoMutante=noMutante.slice();
+    nuevoArrayNoMutanteInvertido = copiaNoMutante.reverse();
     for(var i = 0; i <= 5; i++){
         if( nuevoArrayNoMutanteInvertido[i] == 6){
             parrafoHexagrama2[i].innerHTML = '------- -------';
@@ -133,5 +140,55 @@ function insertarElementosEnElHexagramaTres(nuevoArrayNoMutanteInvertido){
 
 //Sección 3 // Asignar un tipo de HEXAGRAMA
 
-var tiposHexagramas = ["Ch'len","K'un","Chun","Meng","Hsü"];
+var tiposHexagramas = ["Ch'len","K'un","Chun","Meng","Hsü","Sung","Shih","Pi","Hsiao Ch'u","Lü","T'ai","P'i","T'ung Jen","Ta Yu","Ch'ien",
+"Yü","Sui","Ku","Lin","Kuan","Shin Ho","Pi","Po","Fu","Wu Wang","Ta Ch'u","I","Ta Kuo","K'an","Li","Hsien","Heng","Tun","Ta Chuang","Chin",
+"Ming I","Chia Jen","K'uei","Chien","Hsieh","Sun","I","Kuai","Kou","Ts'ui","Sheng","K'un","Ching","Ko","Ting","Chen","Ken","Chien","Kuei Mei",
+"Feng","Lü","Sun","Tui","Huan","Chieh","Chung Fu","Hsiao Kuo","Chi Chi","Wei Chi"];
 
+//Borrar linea de primer hexagrama
+function borrarLinea(){
+botonInserLinea.disabled=false;//Habilitar boton de insertar linea
+botonInserLinea.style.backgroundColor="rgb(0, 124, 72)";//Cambiar color boton de insertar linea
+  parrafoHexagrama1[contadorDeParrafos+1].innerHTML = '';
+  noMutante.pop();
+  contadorDeParrafos++;
+  contadorNoMutante--;
+   if(contadorDeParrafos==5 && contadorNoMutante==0){
+    botonEliLinea.disabled=true;//Deshabilitar boton de eliminar linea
+    botonEliLinea.style.backgroundColor="rgb(224, 121, 117)";//Cambiar color boton de eliminar linea
+   }else if(contadorDeParrafos==0 && contadorNoMutante==5){
+       borrarHexagramaDos();
+       borrarHexagramaTres();
+   }
+}
+
+function borrarHexagramaUno(){
+    for(var i = 0; i <=6; i++){
+        parrafoHexagrama1[i].innerHTML = ''; 
+    }
+}
+
+function borrarHexagramaDos(){
+    for(var i = 0; i <= 6; i++){
+        parrafoHexagrama2[i].innerHTML = ''; 
+    }
+}
+
+function borrarHexagramaTres(){
+    for(var i = 0; i <= 6; i++){
+        parrafoHexagrama3[i].innerHTML = ''; 
+    }
+}
+
+function borrarHexagrama(){
+    botonInserLinea.disabled=false;//Habilitar boton de insertar linea
+    botonInserLinea.style.backgroundColor="rgb(0, 124, 72)";//Cambiar color boton de insertar linea
+    botonEliLinea.disabled=true;//Desahabilitar boton eliminar linea
+    botonEliLinea.style.backgroundColor="rgb(224, 121, 117)";//Cambiar color boton  eliminar linea
+    contadorDeParrafos = 5; 
+    contadorNoMutante = 0;
+    noMutante = [];
+    borrarHexagramaUno();
+    borrarHexagramaDos();
+    borrarHexagramaTres();
+}
