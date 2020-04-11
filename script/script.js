@@ -64,7 +64,7 @@ var noMutante = [];
 /*Para el PRIMER HEXAGRAMA*/
 function insertarElementosEnElHexagramaUno(valorTotalDeLineaDeHexagrama) {
     botonEliLinea.disabled = false;
-    botonEliLinea.style.backgroundColor = "rgb(0, 124, 72)";
+    botonEliLinea.classList.remove('inactiveButton');
     if (valorTotalDeLineaDeHexagrama == 6) {
         noMutante[contadorNoMutante] = 6;
         parrafoHexagrama1[contadorDeParrafos].innerHTML = '-------X-------'; // valor de 6
@@ -90,7 +90,7 @@ function insertarElementosEnElHexagramaUno(valorTotalDeLineaDeHexagrama) {
             parrafoHexagrama1[6].innerHTML = revisionTipo; // El tipo de HEXAGRAMA EN CASO DE SER NO MUTANTE
         }
         botonInserLinea.disabled = true;
-        botonInserLinea.style.backgroundColor = "rgb(224, 121, 117)";
+        botonInserLinea.classList.add('inactiveButton');
     }
 
     contadorNoMutante++;
@@ -197,14 +197,14 @@ function evaluarTipoHexagrama(arrayDeOrden) {
 //Borrar linea de primer hexagrama
 function borrarLinea() {
     botonInserLinea.disabled = false;//Habilitar boton de insertar linea
-    botonInserLinea.style.backgroundColor = "rgb(0, 124, 72)";//Cambiar color boton de insertar linea
+    botonInserLinea.classList.remove('inactiveButton');//Cambiar color boton de insertar linea
     parrafoHexagrama1[contadorDeParrafos + 1].innerHTML = '';
     noMutante.pop();
     contadorDeParrafos++;
     contadorNoMutante--;
     if (contadorDeParrafos == 5 && contadorNoMutante == 0) {
         botonEliLinea.disabled = true;//Deshabilitar boton de eliminar linea
-        botonEliLinea.style.backgroundColor = "rgb(224, 121, 117)";//Cambiar color boton de eliminar linea
+        botonEliLinea.classList.add('inactiveButton');//Cambiar color boton de eliminar linea
     } else if (contadorDeParrafos == 0 && contadorNoMutante == 5) {
         borrarHexagramaDos();
         borrarHexagramaTres();
@@ -231,9 +231,9 @@ function borrarHexagramaTres() {
 
 function borrarHexagrama() {
     botonInserLinea.disabled = false;//Habilitar boton de insertar linea
-    botonInserLinea.style.backgroundColor = "rgb(0, 124, 72)";//Cambiar color boton de insertar linea
+    botonInserLinea.classList.remove('inactiveButton');//Cambiar color boton de insertar linea
     botonEliLinea.disabled = true;//Desahabilitar boton eliminar linea
-    botonEliLinea.style.backgroundColor = "rgb(224, 121, 117)";//Cambiar color boton  eliminar linea
+    botonEliLinea.classList.add('inactiveButton');//Cambiar color boton  eliminar linea
     contadorDeParrafos = 5;
     contadorNoMutante = 0;
     noMutante = [];
