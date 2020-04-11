@@ -130,4 +130,6 @@ function insertarElementosEnElHexagramaTres(nuevoArrayNoMutanteInvertido){
     parrafoHexagrama3[6].innerHTML = 'tipo';
 }
 
-//Sección 2 // METER LOS TEXTOS EN EL HEXAGRAMA
+//Sección 3 // Asignar un tipo de HEXAGRAMA
+
+var tiposHexagramas = ["Ch'len","K'un","Chun","Meng","Hsü"];
