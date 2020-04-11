@@ -126,6 +126,21 @@ function insertarElementosEnElHexagramaDos(noMutante) {
 
 function insertarElementosEnElHexagramaTres(nuevoArrayNoMutanteInvertido) {
 
+    var arrayCodigoRenovado = [];
+    /*Evaluar el tipo de hexagrama*/
+    for (var k = 0; k < 6; k++) {
+        if (nuevoArrayNoMutanteInvertido[k] == 9 || nuevoArrayNoMutanteInvertido[k] == 8 ){
+            arrayCodigoRenovado.push("8");
+        } else if (nuevoArrayNoMutanteInvertido[k] == 6 || nuevoArrayNoMutanteInvertido[k] == 7) {
+            arrayCodigoRenovado.push("7");
+        }
+    }
+
+    var revisionTipo = evaluarTipoHexagrama(arrayCodigoRenovado.reverse())
+    parrafoHexagrama3[6].innerHTML = revisionTipo; // El tipo de HEXAGRAMA EN CASO DE SER NO MUTANTE
+
+
+    nuevoArrayNoMutanteInvertido = nuevoArrayNoMutanteInvertido;
     for (var i = 0; i <= 5; i++) {
         if (nuevoArrayNoMutanteInvertido[i] == 6) {
             parrafoHexagrama3[i].innerHTML = '---------------';
@@ -138,7 +153,6 @@ function insertarElementosEnElHexagramaTres(nuevoArrayNoMutanteInvertido) {
         }
     }
 
-    parrafoHexagrama3[6].innerHTML = 'tipo';
 }
 
 //Sección 3 // Asignar un tipo de HEXAGRAMA
@@ -172,6 +186,7 @@ function evaluarTipoHexagrama(arrayDeOrden) {
 
     for (var contador = 0; contador < 64; contador++) {
         if (cadenaCodigo == arrayCodigosFull[contador]) {
+            arrayCodigos = [];
             return ((contador + 1) + ". " + tiposHexagramas[contador]);
         }
     }
