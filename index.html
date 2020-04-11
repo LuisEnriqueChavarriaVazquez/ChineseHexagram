@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="styles/tablaHexagramas.css">
 
     <link rel="shortcut icon" href="resorces/favicon.ico" type="image/x-icon">
-
+    <script src="script/script.js"></script>
     <title>Document</title>
 </head>
 
@@ -34,16 +34,16 @@
                     <h1 id="tituloPanelEntradadDatos">Panel de datos</h1>
                 </div>
                 <div class="panelInformacion">
-                    <input type="text" placeholder="Escriba un numero entre el 2 y el 3">
+                    <input  id="PrimerParametroEntrada" type="text" placeholder="Escriba un numero entre el 2 y el 3">
                 </div>
                 <div class="panelInformacion">
-                    <input type="text" placeholder="Escriba un numero entre el 2 y el 3">
+                    <input id="SegundoParametroEntrada" type="text" placeholder="Escriba un numero entre el 2 y el 3">
                 </div>
                 <div class="panelInformacion">
-                    <input type="text" placeholder="Escriba un numero entre el 2 y el 3">
+                    <input id="TercerParametroEntrada" type="text" placeholder="Escriba un numero entre el 2 y el 3">
                 </div>
                 <div class="panelButtons">
-                    <input type="button" id="button1" value="Agregar">
+                    <input type="button" id="button1" value="Agregar" onclick="obtenerSuma()">
                     <input type="button" id="button2" value="Borrar Línea">
                     <input type="button" id="button3" value="Borrar Hexagrama">
                 </div>
