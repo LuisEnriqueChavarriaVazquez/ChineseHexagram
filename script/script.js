@@ -4,8 +4,9 @@ var primerInput,segundoInput,tercerInput;
 var valorTotalDeLineaDeHexagrama; /*SUMA DE LOS VALORES*/
 
 function ejecutorDeFunciones(){
-    guardarDato();
-    insertarElementosEnElHexagramaUno(valorTotalDeLineaDeHexagrama);
+    if(guardarDato()!=false){
+        insertarElementosEnElHexagramaUno(valorTotalDeLineaDeHexagrama);
+    }
 }
 
 function guardarDato(){
