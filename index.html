@@ -34,16 +34,16 @@
                     <h1 id="tituloPanelEntradadDatos">Panel de datos</h1>
                 </div>
                 <div class="panelInformacion">
-                    <input type="text" placeholder="Escriba un numero entre el 2 y el 3">
+                    <input id="valorInput1" type="text" placeholder="Escriba un numero entre el 2 y el 3">
                 </div>
                 <div class="panelInformacion">
-                    <input type="text" placeholder="Escriba un numero entre el 2 y el 3">
+                    <input id="valorInput2" type="text" placeholder="Escriba un numero entre el 2 y el 3">
                 </div>
                 <div class="panelInformacion">
-                    <input type="text" placeholder="Escriba un numero entre el 2 y el 3">
+                    <input id="valorInput3" type="text" placeholder="Escriba un numero entre el 2 y el 3">
                 </div>
                 <div class="panelButtons">
-                    <input type="button" id="button1" value="Agregar">
+                    <input type="button" id="button1" value="Agregar" onclick="guardarDato()">
                     <input type="button" id="button2" value="Borrar Línea">
                     <input type="button" id="button3" value="Borrar Hexagrama">
                 </div>
@@ -56,71 +56,6 @@
                     <h1 id="tituloPanelEntradadDatos">Hexagramas.</h1>
                 </div>
                 <section class="boxHexagrama">
-                    <div class="hexagrama">
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>陈 chen</p>
-                    </div>
-                    <div class="hexagrama">
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>陈 chen</p>
-                    </div>
-                    <div class="hexagrama">
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>陈 chen</p>
-                    </div>
-                    <div class="hexagrama">
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>陈 chen</p>
-                    </div>
-                    <div class="hexagrama">
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>陈 chen</p>
-                    </div>
-                </section>
-                <section class="boxHexagrama">
-                    <div class="hexagrama">
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>陈 chen</p>
-                    </div>
-                    <div class="hexagrama">
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>----------------</p>
-                        <p>陈 chen</p>
-                    </div>
                     <div class="hexagrama">
                         <p>----------------</p>
                         <p>----------------</p>
@@ -232,7 +167,7 @@
                     </td>
                     <td class="TablaNumeros">
                         <div class="colorOn"><p>34</p></div>
-                    </td>
+                    </td> 
                     <td class="TablaNumeros">
                         <div class="colorOn"><p>5</p></div>
                     </td>
@@ -487,5 +422,5 @@
         </section>
     </section>
 </body>
-
+<script src="script/script.js"></script>
 </html>

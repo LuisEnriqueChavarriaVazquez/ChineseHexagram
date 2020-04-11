@@ -28,6 +28,7 @@
 
   .boxHexagrama{
     width: 100%;
+    height: 300PX;
     padding: 20px;
 
     display: flex;
@@ -37,7 +38,8 @@
 
   .hexagrama{
     padding: 20px 10px 20px 10px;
-    width: 100px;
+    width: 120px;
+    height: 160px;
     text-align: center;
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
