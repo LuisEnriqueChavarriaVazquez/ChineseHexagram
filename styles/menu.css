@@ -1,6 +1,7 @@
 .mainMenu{
     width: 100%;
-    position: fixed;}
+    position: fixed;
+    z-index: 100;}
 
 .menu{
     height:60px;

@@ -99,6 +99,7 @@ function insertarElementosEnElHexagramaUno(valorTotalDeLineaDeHexagrama) {
         } else {
             var revisionTipo = evaluarTipoHexagrama(noMutante)
             parrafoHexagrama1[6].innerHTML = revisionTipo; // El tipo de HEXAGRAMA EN CASO DE SER NO MUTANTE
+            insertarTooltip(revisionTipo,1) // Insercion del tooltip
         }
         botonInserLinea.disabled = true;
         botonInserLinea.classList.add('inactiveButton');
@@ -131,6 +132,7 @@ function insertarElementosEnElHexagramaDos(noMutante) {
     parrafoHexagrama2[6].innerHTML = revisionTipo; // El tipo de HEXAGRAMA EN CASO DE SER NO MUTANTE
 
     insertarElementosEnElHexagramaTres(nuevoArrayNoMutanteInvertido);
+    insertarTooltip(revisionTipo,2) // Insercion del tooltip
 }
 
 /*Para el tercer hexagrama solamente tenemos que invertir las lineas obtenidas*/
@@ -164,6 +166,8 @@ function insertarElementosEnElHexagramaTres(nuevoArrayNoMutanteInvertido) {
             parrafoHexagrama3[i].innerHTML = '------- -------';
         }
     }
+
+    insertarTooltip(revisionTipo,3) // Insercion del tooltip
 
 }
 
@@ -208,7 +212,53 @@ function evaluarTipoHexagrama(arrayDeOrden) {
     }
 }
 
-//Sección 4 // Eliminado de los componenetes
+//Seccion 4 // TOOLTIPS PARA LOS HEXAGRAMAS.
+
+var arrayTooltips = ["1. Cielo. Lo creativo. El principio generador","2. Tierra. Lo receptivo. El principio pasivo",
+"3. Acumular. El obstáculo inicial. La dificultad del comienzo","4. Juventud. El joven necio. La inmadurez.",
+"5. Esperar. La espera. La maduración.","6. Disputar. El conflicto. El pleito",
+"7. Ejército. La legión.","8. Solidaridad. La unión","9. Animalito doméstico. La pequeña fuerza",
+"10. Caminar. El porte. El paso cauteloso","11. Prosperidad. La paz. La armonía.","12. Cierre. El estancamiento. Lo inerte.",
+"13.Hombres Reunidos. La unión comunitaria","14.Gran dominio. La gran posesión. Lo que se tiene de más.",
+"15.Condescendencia. La modestia. La humildad","16.Ocuparse. El entusiasmo. La algarabía.","17.Conformarse. La continuidad. El seguimiento.",
+"18.Destrucción. La reconstrucción. La labor en lo corrompido.","19.Acercarse. Lo que va llegando.","20.Observar. La contemplación.",
+"21.Quebrar mordiendo. La dentellada. La filosa mordedura", "22.Adornar. La elegancia. La gracia.","23.Resquebrajar. La desintegración. El derrumbe",
+"24.Regresar. El retorno. Lo que vuelve.","25.Sinceridad. La inocencia. La naturalidad.","26.Fuerza educadora. El poder de lo fuerte. La gran acumulación",
+"27.Nutrirse. La alimentación. Las fauces.","28.Excesos. La preponderancia de lo grande.","29.Peligro. Lo abismal. La caida",
+"30.Distinguir. El resplandor. Lo adherente.","31.Unir. La influencia.La atracción.","32.Luna Creciente. La duración. La permanencia.",
+"33.Retirarse. EL repliegue.","34.Gran fuerza. El gran vigor.","35.Progresar. El avance.","36.Luz que se apaga. El oscurecimiento","37.Gente de familia. El clan.",
+"38.Contraste. La oposición. El antagonismo.","39.Dificultad. El obstáculo. El impedimento.","40.Explicar. La liberación. El alivio.",
+"41.Perder. La disminución.","42.Evolución. El aumento. La ganancia.","43.Decidir. El desbordamiento. La resolución",
+"44.Encontrarse. El acoplamiento.","45.Cosechar. La reunión. La convergencia.","46.Subir. El ascenso. La escalada.",
+"47.Angustia. La pesadumbre. El agotamiento","48.El pozo de agua. La fuente.","49.Renovar. La revolución. El cambio",
+"50.La caldera. Lo alquímico","51.Trueno. La conmoción. Lo suscitativo.","52.Cimientos. La quietud. La detención.",
+"53.Evolución. El progreso gradual.","54.Desposar a la hija menor. La doncella.","55.Abundancia. La plenitud.",
+"56.Viajero. El andariego","57.Viento. Lo penetrante. Lo suave.","58.Recogerse. La serenidad. La satisfacción.",
+"59.Confusión. La dispersión. La disolución ","60.Moderación. La restricción. La limitación","61.Fe Interior. La verdad interior. La sinceridad interna.",
+"62.Pequeñas cosas importantes. La pequeña preponderancia.","63.Conclusiones. Después de la realización.","64.Inconcluso. Antes de la realización."];
+
+/*DECLARAMOS ELEMENTOS PARA LA PARTE DE LOS TOOLTIPS*/
+var tooltip1 = document.getElementById('tooltip1');
+var tooltip2 = document.getElementById('tooltip2');
+var tooltip3 = document.getElementById('tooltip3');
+
+function insertarTooltip(cadenaTipo,numero){
+    var cadenaPrimerosDosCaracteres;
+    cadenaPrimerosDosCaracteres = cadenaTipo.substr(0,2);
+    cadenaPrimerosDosCaracteresNumero = parseInt(cadenaPrimerosDosCaracteres,10);
+    if(numero === 1){
+        tooltip1.innerHTML = arrayTooltips[cadenaPrimerosDosCaracteresNumero-1];
+        tooltip1.classList.remove('tooltiptextHide');
+    }else if(numero === 2){
+        tooltip2.innerHTML = arrayTooltips[cadenaPrimerosDosCaracteresNumero-1];
+        tooltip2.classList.remove('tooltiptextHide');
+    }else if(numero === 3){
+        tooltip3.innerHTML = arrayTooltips[cadenaPrimerosDosCaracteresNumero-1]; //Para el tooltip 3
+        tooltip3.classList.remove('tooltiptextHide');
+    }
+}
+
+//Sección 5 // Eliminado de los componenetes
 
 //Borrar linea de primer hexagrama
 function borrarLinea() {
@@ -227,24 +277,40 @@ function borrarLinea() {
         borrarHexagramaDos();
         borrarHexagramaTres();
     }
+
+    tooltip1.classList.add('tooltiptextHide');
+    tooltip2.classList.add('tooltiptextHide');
+    tooltip3.classList.add('tooltiptextHide');
 }
 
 function borrarHexagramaUno() {
     for (var i = 0; i <= 6; i++) {
         parrafoHexagrama1[i].innerHTML = '';
     }
+
+    tooltip1.classList.add('tooltiptextHide');
+    tooltip2.classList.add('tooltiptextHide');
+    tooltip3.classList.add('tooltiptextHide');
 }
 
 function borrarHexagramaDos() {
     for (var i = 0; i <= 6; i++) {
         parrafoHexagrama2[i].innerHTML = '';
     }
+
+    tooltip1.classList.add('tooltiptextHide');
+    tooltip2.classList.add('tooltiptextHide');
+    tooltip3.classList.add('tooltiptextHide');
 }
 
 function borrarHexagramaTres() {
     for (var i = 0; i <= 6; i++) {
         parrafoHexagrama3[i].innerHTML = '';
     }
+
+    tooltip1.classList.add('tooltiptextHide');
+    tooltip2.classList.add('tooltiptextHide');
+    tooltip3.classList.add('tooltiptextHide');
 }
 
 function borrarHexagrama() {

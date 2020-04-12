@@ -27,3 +27,12 @@
 .tooltip:hover .tooltiptext {
     visibility: visible;
 }
+
+/*Ocultar lee*/
+.tooltipHide, .tooltiptextHide{
+    visibility: hidden !important;
+}
+
+.tooltipHide:hover, .tooltiptextHide:hover {
+    visibility: hidden !important;
+}
