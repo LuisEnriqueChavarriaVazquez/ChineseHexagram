@@ -169,10 +169,14 @@ function insertarElementosEnElHexagramaTres(nuevoArrayNoMutanteInvertido) {
 
 //Sección 3 // Asignar un tipo de HEXAGRAMA
 
-var tiposHexagramas = ["Ch'len", "K'un", "Chun", "Meng", "Hsü", "Sung", "Shih", "Pi", "Hsiao Ch'u", "Lü", "T'ai", "P'i", "T'ung Jen", "Ta Yu", "Ch'ien",
-    "Yü", "Sui", "Ku", "Lin", "Kuan", "Shin Ho", "Pi", "Po", "Fu", "Wu Wang", "Ta Ch'u", "I", "Ta Kuo", "K'an", "Li", "Hsien", "Heng", "Tun", "Ta Chuang", "Chin",
-    "Ming I", "Chia Jen", "K'uei", "Chien", "Hsieh", "Sun", "I", "Kuai", "Kou", "Ts'ui", "Sheng", "K'un", "Ching", "Ko", "Ting", "Chen", "Ken", "Chien", "Kuei Mei",
-    "Feng", "Lü", "Sun", "Tui", "Huan", "Chieh", "Chung Fu", "Hsiao Kuo", "Chi Chi", "Wei Chi"];
+var tiposHexagramas = ["Ch'len <br> 乾為天", "K'un <br> 坤為地", "Chun <br> 水雷屯", "Meng <br> 山水蒙", "Hsü <br> 水天需", "Sung <br> 天水訟", "Shih <br> 地水師", 
+"Pi <br> 水地比", "Hsiao Ch'u <br> 風天小畜", "Lü <br> 天泽履", "T'ai <br> 地天泰", "P'i <br> 天地否", "T'ung Jen <br> 天火同人", "Ta Yu <br> 火天大有", "Ch'ien <br> 地山謙",
+"Yü <br> 雷地豫", "Sui <br> 泽雷随", "Ku <br> 山風蠱", "Lin <br> 地泽臨", "Kuan <br> 風地观", "Shin Ho <br> 火雷噬嗑", "Pi <br> 山火賁", "Po <br> 山地剥", "Fu <br> 地雷復", 
+"Wu Wang <br> 天雷无妄", "Ta Ch'u <br> 山天大畜", "I <br> 山雷頤", "Ta Kuo <br> 泽風大過", "K'an <br> 坎為水", "Li <br> 離為火", "Hsien <br> 泽山咸", "Heng <br> 雷風恒", 
+"Tun <br> 天山遯", "Ta Chuang <br> 雷天大壮", "Chin <br> 火地晋","Ming I <br> 地火明夷", "Chia Jen <br> 風火家人", "K'uei <br> 火泽睽", "Chien <br> 水山蹇", "Hsieh <br> 雷水解", 
+"Sun <br> 山泽損", "I <br> 風雷益", "Kuai <br> 泽天夬", "Kou <br> 天風姤", "Ts'ui <br> 泽地萃", "Sheng <br> 地風升", "K'un <br> 泽水困", "Ching <br> 水風井", "Ko <br> 泽火革", 
+"Ting <br> 火風鼎", "Chen <br> 震為雷", "Ken <br> 艮為山", "Chien <br> 風山漸", "Kuei Mei <br> 雷泽归妹","Feng <br> 雷火豊", "Lü <br> 火山旅", "Sun <br> 巽為風", "Tui <br> 兌為泽", 
+"Huan <br> 風水渙", "Chieh <br> 水泽節", "Chung Fu <br> 風泽中孚", "Hsiao Kuo <br> 雷山小過", "Chi Chi <br> 水火既济", "Wei Chi <br> 火水未济"];
 
 var arrayCodigos = [];
 var arrayCodigosFull = ["FFFFFF", "IIIIII", "FIIIFI", "IFIIIF", "FFFIFI", "IFIFFF", "IFIIII", "IIIIFI", "FFFIFF", "FFIFFF"
