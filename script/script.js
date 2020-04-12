@@ -147,19 +147,20 @@ function insertarElementosEnElHexagramaTres(nuevoArrayNoMutanteInvertido) {
         }
     }
 
-    var revisionTipo = evaluarTipoHexagrama(arrayCodigoRenovado.reverse())
+    var revisionTipo = evaluarTipoHexagrama(arrayCodigoRenovado)
     parrafoHexagrama3[6].innerHTML = revisionTipo; // El tipo de HEXAGRAMA EN CASO DE SER NO MUTANTE
+    console.log(nuevoArrayNoMutanteInvertido);
 
-
-    nuevoArrayNoMutanteInvertido = nuevoArrayNoMutanteInvertido;
+    var arrayInvertidoParaImpresion;
+    arrayInvertidoParaImpresion = nuevoArrayNoMutanteInvertido.reverse();
     for (var i = 0; i <= 5; i++) {
-        if (nuevoArrayNoMutanteInvertido[i] == 6) {
+        if (arrayInvertidoParaImpresion[i] == 6) {
             parrafoHexagrama3[i].innerHTML = '---------------';
-        } else if (nuevoArrayNoMutanteInvertido[i] == 9) {
+        } else if (arrayInvertidoParaImpresion[i] == 9) {
             parrafoHexagrama3[i].innerHTML = '------- -------';
-        } else if (nuevoArrayNoMutanteInvertido[i] == 7) {
+        } else if (arrayInvertidoParaImpresion[i] == 7) {
             parrafoHexagrama3[i].innerHTML = '---------------';
-        } else if (nuevoArrayNoMutanteInvertido[i] == 8) {
+        } else if (arrayInvertidoParaImpresion[i] == 8) {
             parrafoHexagrama3[i].innerHTML = '------- -------';
         }
     }
