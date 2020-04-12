@@ -99,7 +99,7 @@ function insertarElementosEnElHexagramaUno(valorTotalDeLineaDeHexagrama) {
         } else {
             var revisionTipo = evaluarTipoHexagrama(noMutante)
             parrafoHexagrama1[6].innerHTML = revisionTipo; // El tipo de HEXAGRAMA EN CASO DE SER NO MUTANTE
-            insertarTooltip(revisionTipo,1) // Insercion del tooltip
+            insertarTooltip(revisionTipo, 1) // Insercion del tooltip
         }
         botonInserLinea.disabled = true;
         botonInserLinea.classList.add('inactiveButton');
@@ -132,7 +132,7 @@ function insertarElementosEnElHexagramaDos(noMutante) {
     parrafoHexagrama2[6].innerHTML = revisionTipo; // El tipo de HEXAGRAMA EN CASO DE SER NO MUTANTE
 
     insertarElementosEnElHexagramaTres(nuevoArrayNoMutanteInvertido);
-    insertarTooltip(revisionTipo,2) // Insercion del tooltip
+    insertarTooltip(revisionTipo, 2) // Insercion del tooltip
 }
 
 /*Para el tercer hexagrama solamente tenemos que invertir las lineas obtenidas*/
@@ -167,20 +167,20 @@ function insertarElementosEnElHexagramaTres(nuevoArrayNoMutanteInvertido) {
         }
     }
 
-    insertarTooltip(revisionTipo,3) // Insercion del tooltip
+    insertarTooltip(revisionTipo, 3) // Insercion del tooltip
 
 }
 
 //Sección 3 // Asignar un tipo de HEXAGRAMA
 
-var tiposHexagramas = ["Ch'len <br> 乾為天", "K'un <br> 坤為地", "Chun <br> 水雷屯", "Meng <br> 山水蒙", "Hsü <br> 水天需", "Sung <br> 天水訟", "Shih <br> 地水師", 
-"Pi <br> 水地比", "Hsiao Ch'u <br> 風天小畜", "Lü <br> 天泽履", "T'ai <br> 地天泰", "P'i <br> 天地否", "T'ung Jen <br> 天火同人", "Ta Yu <br> 火天大有", "Ch'ien <br> 地山謙",
-"Yü <br> 雷地豫", "Sui <br> 泽雷随", "Ku <br> 山風蠱", "Lin <br> 地泽臨", "Kuan <br> 風地观", "Shin Ho <br> 火雷噬嗑", "Pi <br> 山火賁", "Po <br> 山地剥", "Fu <br> 地雷復", 
-"Wu Wang <br> 天雷无妄", "Ta Ch'u <br> 山天大畜", "I <br> 山雷頤", "Ta Kuo <br> 泽風大過", "K'an <br> 坎為水", "Li <br> 離為火", "Hsien <br> 泽山咸", "Heng <br> 雷風恒", 
-"Tun <br> 天山遯", "Ta Chuang <br> 雷天大壮", "Chin <br> 火地晋","Ming I <br> 地火明夷", "Chia Jen <br> 風火家人", "K'uei <br> 火泽睽", "Chien <br> 水山蹇", "Hsieh <br> 雷水解", 
-"Sun <br> 山泽損", "I <br> 風雷益", "Kuai <br> 泽天夬", "Kou <br> 天風姤", "Ts'ui <br> 泽地萃", "Sheng <br> 地風升", "K'un <br> 泽水困", "Ching <br> 水風井", "Ko <br> 泽火革", 
-"Ting <br> 火風鼎", "Chen <br> 震為雷", "Ken <br> 艮為山", "Chien <br> 風山漸", "Kuei Mei <br> 雷泽归妹","Feng <br> 雷火豊", "Lü <br> 火山旅", "Sun <br> 巽為風", "Tui <br> 兌為泽", 
-"Huan <br> 風水渙", "Chieh <br> 水泽節", "Chung Fu <br> 風泽中孚", "Hsiao Kuo <br> 雷山小過", "Chi Chi <br> 水火既济", "Wei Chi <br> 火水未济"];
+var tiposHexagramas = ["Ch'len <br> 乾為天", "K'un <br> 坤為地", "Chun <br> 水雷屯", "Meng <br> 山水蒙", "Hsü <br> 水天需", "Sung <br> 天水訟", "Shih <br> 地水師",
+    "Pi <br> 水地比", "Hsiao Ch'u <br> 風天小畜", "Lü <br> 天泽履", "T'ai <br> 地天泰", "P'i <br> 天地否", "T'ung Jen <br> 天火同人", "Ta Yu <br> 火天大有", "Ch'ien <br> 地山謙",
+    "Yü <br> 雷地豫", "Sui <br> 泽雷随", "Ku <br> 山風蠱", "Lin <br> 地泽臨", "Kuan <br> 風地观", "Shin Ho <br> 火雷噬嗑", "Pi <br> 山火賁", "Po <br> 山地剥", "Fu <br> 地雷復",
+    "Wu Wang <br> 天雷无妄", "Ta Ch'u <br> 山天大畜", "I <br> 山雷頤", "Ta Kuo <br> 泽風大過", "K'an <br> 坎為水", "Li <br> 離為火", "Hsien <br> 泽山咸", "Heng <br> 雷風恒",
+    "Tun <br> 天山遯", "Ta Chuang <br> 雷天大壮", "Chin <br> 火地晋", "Ming I <br> 地火明夷", "Chia Jen <br> 風火家人", "K'uei <br> 火泽睽", "Chien <br> 水山蹇", "Hsieh <br> 雷水解",
+    "Sun <br> 山泽損", "I <br> 風雷益", "Kuai <br> 泽天夬", "Kou <br> 天風姤", "Ts'ui <br> 泽地萃", "Sheng <br> 地風升", "K'un <br> 泽水困", "Ching <br> 水風井", "Ko <br> 泽火革",
+    "Ting <br> 火風鼎", "Chen <br> 震為雷", "Ken <br> 艮為山", "Chien <br> 風山漸", "Kuei Mei <br> 雷泽归妹", "Feng <br> 雷火豊", "Lü <br> 火山旅", "Sun <br> 巽為風", "Tui <br> 兌為泽",
+    "Huan <br> 風水渙", "Chieh <br> 水泽節", "Chung Fu <br> 風泽中孚", "Hsiao Kuo <br> 雷山小過", "Chi Chi <br> 水火既济", "Wei Chi <br> 火水未济"];
 
 var arrayCodigos = [];
 var arrayCodigosFull = ["FFFFFF", "IIIIII", "FIIIFI", "IFIIIF", "FFFIFI", "IFIFFF", "IFIIII", "IIIIFI", "FFFIFF", "FFIFFF"
@@ -214,50 +214,62 @@ function evaluarTipoHexagrama(arrayDeOrden) {
 
 //Seccion 4 // TOOLTIPS PARA LOS HEXAGRAMAS.
 
-var arrayTooltips = ["1. Cielo. Lo creativo. El principio generador","2. Tierra. Lo receptivo. El principio pasivo",
-"3. Acumular. El obstáculo inicial. La dificultad del comienzo","4. Juventud. El joven necio. La inmadurez.",
-"5. Esperar. La espera. La maduración.","6. Disputar. El conflicto. El pleito",
-"7. Ejército. La legión.","8. Solidaridad. La unión","9. Animalito doméstico. La pequeña fuerza",
-"10. Caminar. El porte. El paso cauteloso","11. Prosperidad. La paz. La armonía.","12. Cierre. El estancamiento. Lo inerte.",
-"13.Hombres Reunidos. La unión comunitaria","14.Gran dominio. La gran posesión. Lo que se tiene de más.",
-"15.Condescendencia. La modestia. La humildad","16.Ocuparse. El entusiasmo. La algarabía.","17.Conformarse. La continuidad. El seguimiento.",
-"18.Destrucción. La reconstrucción. La labor en lo corrompido.","19.Acercarse. Lo que va llegando.","20.Observar. La contemplación.",
-"21.Quebrar mordiendo. La dentellada. La filosa mordedura", "22.Adornar. La elegancia. La gracia.","23.Resquebrajar. La desintegración. El derrumbe",
-"24.Regresar. El retorno. Lo que vuelve.","25.Sinceridad. La inocencia. La naturalidad.","26.Fuerza educadora. El poder de lo fuerte. La gran acumulación",
-"27.Nutrirse. La alimentación. Las fauces.","28.Excesos. La preponderancia de lo grande.","29.Peligro. Lo abismal. La caida",
-"30.Distinguir. El resplandor. Lo adherente.","31.Unir. La influencia.La atracción.","32.Luna Creciente. La duración. La permanencia.",
-"33.Retirarse. EL repliegue.","34.Gran fuerza. El gran vigor.","35.Progresar. El avance.","36.Luz que se apaga. El oscurecimiento","37.Gente de familia. El clan.",
-"38.Contraste. La oposición. El antagonismo.","39.Dificultad. El obstáculo. El impedimento.","40.Explicar. La liberación. El alivio.",
-"41.Perder. La disminución.","42.Evolución. El aumento. La ganancia.","43.Decidir. El desbordamiento. La resolución",
-"44.Encontrarse. El acoplamiento.","45.Cosechar. La reunión. La convergencia.","46.Subir. El ascenso. La escalada.",
-"47.Angustia. La pesadumbre. El agotamiento","48.El pozo de agua. La fuente.","49.Renovar. La revolución. El cambio",
-"50.La caldera. Lo alquímico","51.Trueno. La conmoción. Lo suscitativo.","52.Cimientos. La quietud. La detención.",
-"53.Evolución. El progreso gradual.","54.Desposar a la hija menor. La doncella.","55.Abundancia. La plenitud.",
-"56.Viajero. El andariego","57.Viento. Lo penetrante. Lo suave.","58.Recogerse. La serenidad. La satisfacción.",
-"59.Confusión. La dispersión. La disolución ","60.Moderación. La restricción. La limitación","61.Fe Interior. La verdad interior. La sinceridad interna.",
-"62.Pequeñas cosas importantes. La pequeña preponderancia.","63.Conclusiones. Después de la realización.","64.Inconcluso. Antes de la realización."];
+var arrayTooltips = ["1. Cielo. Lo creativo. El principio generador", "2. Tierra. Lo receptivo. El principio pasivo",
+    "3. Acumular. El obstáculo inicial. La dificultad del comienzo", "4. Juventud. El joven necio. La inmadurez.",
+    "5. Esperar. La espera. La maduración.", "6. Disputar. El conflicto. El pleito",
+    "7. Ejército. La legión.", "8. Solidaridad. La unión", "9. Animalito doméstico. La pequeña fuerza",
+    "10. Caminar. El porte. El paso cauteloso", "11. Prosperidad. La paz. La armonía.", "12. Cierre. El estancamiento. Lo inerte.",
+    "13.Hombres Reunidos. La unión comunitaria", "14.Gran dominio. La gran posesión. Lo que se tiene de más.",
+    "15.Condescendencia. La modestia. La humildad", "16.Ocuparse. El entusiasmo. La algarabía.", "17.Conformarse. La continuidad. El seguimiento.",
+    "18.Destrucción. La reconstrucción. La labor en lo corrompido.", "19.Acercarse. Lo que va llegando.", "20.Observar. La contemplación.",
+    "21.Quebrar mordiendo. La dentellada. La filosa mordedura", "22.Adornar. La elegancia. La gracia.", "23.Resquebrajar. La desintegración. El derrumbe",
+    "24.Regresar. El retorno. Lo que vuelve.", "25.Sinceridad. La inocencia. La naturalidad.", "26.Fuerza educadora. El poder de lo fuerte. La gran acumulación",
+    "27.Nutrirse. La alimentación. Las fauces.", "28.Excesos. La preponderancia de lo grande.", "29.Peligro. Lo abismal. La caida",
+    "30.Distinguir. El resplandor. Lo adherente.", "31.Unir. La influencia.La atracción.", "32.Luna Creciente. La duración. La permanencia.",
+    "33.Retirarse. EL repliegue.", "34.Gran fuerza. El gran vigor.", "35.Progresar. El avance.", "36.Luz que se apaga. El oscurecimiento", "37.Gente de familia. El clan.",
+    "38.Contraste. La oposición. El antagonismo.", "39.Dificultad. El obstáculo. El impedimento.", "40.Explicar. La liberación. El alivio.",
+    "41.Perder. La disminución.", "42.Evolución. El aumento. La ganancia.", "43.Decidir. El desbordamiento. La resolución",
+    "44.Encontrarse. El acoplamiento.", "45.Cosechar. La reunión. La convergencia.", "46.Subir. El ascenso. La escalada.",
+    "47.Angustia. La pesadumbre. El agotamiento", "48.El pozo de agua. La fuente.", "49.Renovar. La revolución. El cambio",
+    "50.La caldera. Lo alquímico", "51.Trueno. La conmoción. Lo suscitativo.", "52.Cimientos. La quietud. La detención.",
+    "53.Evolución. El progreso gradual.", "54.Desposar a la hija menor. La doncella.", "55.Abundancia. La plenitud.",
+    "56.Viajero. El andariego", "57.Viento. Lo penetrante. Lo suave.", "58.Recogerse. La serenidad. La satisfacción.",
+    "59.Confusión. La dispersión. La disolución ", "60.Moderación. La restricción. La limitación", "61.Fe Interior. La verdad interior. La sinceridad interna.",
+    "62.Pequeñas cosas importantes. La pequeña preponderancia.", "63.Conclusiones. Después de la realización.", "64.Inconcluso. Antes de la realización."];
 
 /*DECLARAMOS ELEMENTOS PARA LA PARTE DE LOS TOOLTIPS*/
 var tooltip1 = document.getElementById('tooltip1');
 var tooltip2 = document.getElementById('tooltip2');
 var tooltip3 = document.getElementById('tooltip3');
+var celdasNumeros = document.getElementsByClassName('colorOn');
+var valorCeldaNumero = [];
+var cadenaPrimerosDosCaracteresNumero;
 
-function insertarTooltip(cadenaTipo,numero){
+function insertarTooltip(cadenaTipo, numero) {
     var cadenaPrimerosDosCaracteres;
-    cadenaPrimerosDosCaracteres = cadenaTipo.substr(0,2);
-    cadenaPrimerosDosCaracteresNumero = parseInt(cadenaPrimerosDosCaracteres,10);
-    if(numero === 1){
-        tooltip1.innerHTML = arrayTooltips[cadenaPrimerosDosCaracteresNumero-1];
+    cadenaPrimerosDosCaracteres = cadenaTipo.substr(0, 2);
+    cadenaPrimerosDosCaracteresNumero = parseInt(cadenaPrimerosDosCaracteres, 10);
+    if (numero === 1) {
+        tooltip1.innerHTML = arrayTooltips[cadenaPrimerosDosCaracteresNumero - 1];
         tooltip1.classList.remove('tooltiptextHide');
-    }else if(numero === 2){
-        tooltip2.innerHTML = arrayTooltips[cadenaPrimerosDosCaracteresNumero-1];
+    } else if (numero === 2) {
+        tooltip2.innerHTML = arrayTooltips[cadenaPrimerosDosCaracteresNumero - 1];
         tooltip2.classList.remove('tooltiptextHide');
-    }else if(numero === 3){
-        tooltip3.innerHTML = arrayTooltips[cadenaPrimerosDosCaracteresNumero-1]; //Para el tooltip 3
+    } else if (numero === 3) {
+        tooltip3.innerHTML = arrayTooltips[cadenaPrimerosDosCaracteresNumero - 1]; //Para el tooltip 3
         tooltip3.classList.remove('tooltiptextHide');
     }
-}
 
+    for (var i = 0; i < 64; i++) {
+        valorCeldaNumero[i] = celdasNumeros[i].innerHTML;
+        if (valorCeldaNumero[i] == cadenaPrimerosDosCaracteresNumero) {
+            celdasNumeros[i].classList.add('TablaNumerosSelected');
+            return cadenaPrimerosDosCaracteresNumero, valorCeldaNumero;
+        }
+    }
+    console.log("Array letras " + valorCeldaNumero);
+    console.log("Array letras " + celdasNumeros);
+}
 //Sección 5 // Eliminado de los componenetes
 
 //Borrar linea de primer hexagrama
