@@ -81,7 +81,7 @@ function insertarElementosEnElHexagramaUno(valorTotalDeLineaDeHexagrama) {
         parrafoHexagrama1[contadorDeParrafos].innerHTML = '-------X-------'; // valor de 6
     } else if (valorTotalDeLineaDeHexagrama == 7) {
         noMutante[contadorNoMutante] = 7;
-        parrafoHexagrama1[contadorDeParrafos].innerHTML = '----------------';  // valor de 7 o de 9 sin el 0
+        parrafoHexagrama1[contadorDeParrafos].innerHTML = '-----------------';  // valor de 7 o de 9 sin el 0
     } else if (valorTotalDeLineaDeHexagrama == 8) {
         noMutante[contadorNoMutante] = 8;
         parrafoHexagrama1[contadorDeParrafos].innerHTML = '-------- --------'; // valor de 8 o de 6 sin la x
@@ -244,6 +244,8 @@ var tooltip3 = document.getElementById('tooltip3');
 var celdasNumeros = document.getElementsByClassName('colorOn');
 var valorCeldaNumero = [];
 var cadenaPrimerosDosCaracteresNumero;
+var selectedCelda = [];
+var contador = -1;
 
 function insertarTooltip(cadenaTipo, numero) {
     var cadenaPrimerosDosCaracteres;
@@ -260,15 +262,26 @@ function insertarTooltip(cadenaTipo, numero) {
         tooltip3.classList.remove('tooltiptextHide');
     }
 
+    //////////////////////////////////////////////////////////
+    /*INGRESO DE LOS VALORES DE LA CELDA QUE ES SELECCIONADA*/
+    /////////////////////////////////////////////////////////
     for (var i = 0; i < 64; i++) {
         valorCeldaNumero[i] = celdasNumeros[i].innerHTML;
         if (valorCeldaNumero[i] == cadenaPrimerosDosCaracteresNumero) {
             celdasNumeros[i].classList.add('TablaNumerosSelected');
-            return cadenaPrimerosDosCaracteresNumero, valorCeldaNumero;
+            
+            //Validacion de las celdas.
+            console.log("El valor de la celda es " + i);
+            contador = contador + 1;
+            selectedCelda[contador] = i;
         }
     }
-    console.log("Array letras " + valorCeldaNumero);
-    console.log("Array letras " + celdasNumeros);
+    console.log(selectedCelda);
+    return cadenaPrimerosDosCaracteresNumero, valorCeldaNumero, selectedCelda;
+}
+
+function eliminarElDisenoDeLasCeldas(){
+
 }
 //Sección 5 // Eliminado de los componenetes
 
@@ -293,6 +306,17 @@ function borrarLinea() {
     tooltip1.classList.add('tooltiptextHide');
     tooltip2.classList.add('tooltiptextHide');
     tooltip3.classList.add('tooltiptextHide');
+
+    //Elimnar el estilo de las celdas seleccionadas.
+
+    for (var i = 0; i < 64; i++) {
+        valorCeldaNumero[i] = celdasNumeros[i].innerHTML;
+        if (valorCeldaNumero[i] == cadenaPrimerosDosCaracteresNumero) {
+            celdasNumeros[selectedCelda[selectedCelda.length - 1]].classList.remove('TablaNumerosSelected');
+            celdasNumeros[selectedCelda[selectedCelda.length - 2]].classList.remove('TablaNumerosSelected');
+        }
+    }
+    
 }
 
 function borrarHexagramaUno() {
@@ -332,6 +356,17 @@ function borrarHexagrama() {
     botonEliLinea.classList.add('inactiveButton');//Cambiar color boton  eliminar linea
     botonParaBorrarHexagrama.disabled = true;
     botonParaBorrarHexagrama.classList.add('inactiveButton');
+
+    //Elimnar el estilo de las celdas seleccionadas.
+
+    for (var i = 0; i < 64; i++) {
+        valorCeldaNumero[i] = celdasNumeros[i].innerHTML;
+        if (valorCeldaNumero[i] == cadenaPrimerosDosCaracteresNumero) {
+            celdasNumeros[selectedCelda[selectedCelda.length - 1]].classList.remove('TablaNumerosSelected');
+            celdasNumeros[selectedCelda[selectedCelda.length - 2]].classList.remove('TablaNumerosSelected');
+        }
+    }
+
 
     contadorDeParrafos = 5;
     contadorNoMutante = 0;
