@@ -1,0 +1,68 @@
+.brinco:hover{
+    animation: brinco 1s 1;
+  }
+
+  /*Con simples KEY FRAMES LOGRAMOS EL RESULTADO BUSCADO*/
+  @keyframes brinco{
+    30% {
+      transform: scaleX(1.25) scaleY(0.75);
+    }
+    50% {
+      transform: scaleX(0.75) scaleY(1.25);
+    }
+    60% {
+      transform: scaleX(1.15) scaleY(0.85);
+    }  
+  }
+
+/*Animaciones para los hexagrmas*/
+
+.reboteHexagrama:hover{
+    animation: reboteHexagrama 1.5s 1;
+  }
+  @keyframes reboteHexagrama{
+    20%, 50%, 70%{
+      transform: translateY(0%);
+    }
+    40%{
+      transform: translateY(-45px);
+    }  
+    60%{ 
+      transform: translateY(-25px);
+    }   
+  }
+
+/*Texto animado*/
+
+.textoAnimado{
+    animation: reboteHexagrama .5s 2;
+  }
+  @keyframes reboteHexagrama{
+    20%, 50%, 70%{
+      transform: translateY(0%);
+    }
+    40%{
+      transform: translateY(-45px);
+    }  
+    60%{ 
+      transform: translateY(-25px);
+    }   
+  }
+
+
+/*Texto estirado*/
+  .estirado{
+    animation: estirado 1s 2;
+  }
+
+  @keyframes estirado{
+    30% {
+      transform: scaleX(1.25) scaleY(0.75);
+    }
+    50% {
+      transform: scaleX(0.75) scaleY(1.25);
+    }
+    60% {
+      transform: scaleX(1.15) scaleY(0.85);
+    }  
+  }

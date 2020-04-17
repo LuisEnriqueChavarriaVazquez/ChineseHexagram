@@ -35,3 +35,7 @@
 .tooltipHide:hover, .tooltiptextHide:hover {
     visibility: hidden !important;
 }
+
+.bolder{
+    font-weight: bold;
+}
