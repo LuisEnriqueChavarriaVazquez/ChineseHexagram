@@ -35,7 +35,7 @@
 /*Texto animado*/
 
 .textoAnimado{
-    animation: reboteHexagrama .5s 2;
+    animation: reboteHexagrama 1s 1;
   }
   @keyframes reboteHexagrama{
     20%, 50%, 70%{
@@ -52,17 +52,17 @@
 
 /*Texto estirado*/
   .estirado{
-    animation: estirado 1s 2;
+    animation: estirado 2s 1;
   }
 
   @keyframes estirado{
     30% {
-      transform: scaleX(1.25) scaleY(0.75);
+      transform: scaleX(3) scaleY(2);
     }
     50% {
-      transform: scaleX(0.75) scaleY(1.25);
+      transform: scaleX(2) scaleY(3);
     }
     60% {
-      transform: scaleX(1.15) scaleY(0.85);
+      transform: scaleX(2.15) scaleY(1.85);
     }  
   }

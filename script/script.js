@@ -79,19 +79,19 @@ function insertarElementosEnElHexagramaUno(valorTotalDeLineaDeHexagrama) {
     if (valorTotalDeLineaDeHexagrama == 6) {
         noMutante[contadorNoMutante] = 6;
         parrafoHexagrama1[contadorDeParrafos].innerHTML = '-------X-------'; // valor de 6
-        parrafoHexagrama1[contadorDeParrafos].classList.add('textoAnimado');
+        parrafoHexagrama1[contadorDeParrafos].classList.add('estirado');
     } else if (valorTotalDeLineaDeHexagrama == 7) {
         noMutante[contadorNoMutante] = 7;
         parrafoHexagrama1[contadorDeParrafos].innerHTML = '-----------------';  // valor de 7 o de 9 sin el 0
-        parrafoHexagrama1[contadorDeParrafos].classList.add('textoAnimado');
+        parrafoHexagrama1[contadorDeParrafos].classList.add('estirado');
     } else if (valorTotalDeLineaDeHexagrama == 8) {
         noMutante[contadorNoMutante] = 8;
         parrafoHexagrama1[contadorDeParrafos].innerHTML = '-------- --------'; // valor de 8 o de 6 sin la x
-        parrafoHexagrama1[contadorDeParrafos].classList.add('textoAnimado');
+        parrafoHexagrama1[contadorDeParrafos].classList.add('estirado');
     } else if (valorTotalDeLineaDeHexagrama == 9) {
         noMutante[contadorNoMutante] = 9;
         parrafoHexagrama1[contadorDeParrafos].innerHTML = '-------O-------'; // valor de 9
-        parrafoHexagrama1[contadorDeParrafos].classList.add('textoAnimado');
+        parrafoHexagrama1[contadorDeParrafos].classList.add('estirado');
     }
 
     //Aqui pondremos que tipo de Hexagrama es
@@ -102,8 +102,8 @@ function insertarElementosEnElHexagramaUno(valorTotalDeLineaDeHexagrama) {
 
         } else {
             var revisionTipo = evaluarTipoHexagrama(noMutante)
-            parrafoHexagrama1[6].innerHTML = revisionTipo;
-            revisionTipo.classList.add('estirado'); // El tipo de HEXAGRAMA EN CASO DE SER NO MUTANTE
+            parrafoHexagrama1[6].innerHTML = revisionTipo; // El tipo de HEXAGRAMA EN CASO DE SER NO MUTANTE
+            parrafoHexagrama1[6].classList.add('estirado');
             insertarTooltip(revisionTipo, 1) // Insercion del tooltip
         }
         botonInserLinea.disabled = true;
@@ -123,22 +123,23 @@ function insertarElementosEnElHexagramaDos(noMutante) {
     for (var i = 0; i <= 5; i++) {
         if (nuevoArrayNoMutanteInvertido[i] == 6) {
             parrafoHexagrama2[i].innerHTML = '------- -------';
-            parrafoHexagrama2[i].classList.add('textoAnimado');
+            parrafoHexagrama2[i].classList.add('estirado');
         } else if (nuevoArrayNoMutanteInvertido[i] == 9) {
             parrafoHexagrama2[i].innerHTML = '---------------';
-            parrafoHexagrama2[i].classList.add('textoAnimado');
+            parrafoHexagrama2[i].classList.add('estirado');
         } else if (nuevoArrayNoMutanteInvertido[i] == 7) {
             parrafoHexagrama2[i].innerHTML = '---------------';
-            parrafoHexagrama2[i].classList.add('textoAnimado');
+            parrafoHexagrama2[i].classList.add('estirado');
         } else if (nuevoArrayNoMutanteInvertido[i] == 8) {
             parrafoHexagrama2[i].innerHTML = '------- -------';
-            parrafoHexagrama2[i].classList.add('textoAnimado');
+            parrafoHexagrama2[i].classList.add('estirado');
         }
     }
 
 
     var revisionTipo = evaluarTipoHexagrama(nuevoArrayNoMutanteInvertido.reverse())
     parrafoHexagrama2[6].innerHTML = revisionTipo; // El tipo de HEXAGRAMA EN CASO DE SER NO MUTANTE
+    parrafoHexagrama2[6].classList.add('estirado');
 
     insertarElementosEnElHexagramaTres(nuevoArrayNoMutanteInvertido);
     insertarTooltip(revisionTipo, 2) // Insercion del tooltip
@@ -160,6 +161,7 @@ function insertarElementosEnElHexagramaTres(nuevoArrayNoMutanteInvertido) {
 
     var revisionTipo = evaluarTipoHexagrama(arrayCodigoRenovado)
     parrafoHexagrama3[6].innerHTML = revisionTipo; // El tipo de HEXAGRAMA EN CASO DE SER NO MUTANTE
+    parrafoHexagrama3[6].classList.add('estirado');
     console.log(nuevoArrayNoMutanteInvertido);
 
     var arrayInvertidoParaImpresion;
@@ -167,16 +169,16 @@ function insertarElementosEnElHexagramaTres(nuevoArrayNoMutanteInvertido) {
     for (var i = 0; i <= 5; i++) {
         if (arrayInvertidoParaImpresion[i] == 6) {
             parrafoHexagrama3[i].innerHTML = '---------------';
-            parrafoHexagrama3[i].classList.add('textoAnimado');
+            parrafoHexagrama3[i].classList.add('estirado');
         } else if (arrayInvertidoParaImpresion[i] == 9) {
             parrafoHexagrama3[i].innerHTML = '------- -------';
-            parrafoHexagrama3[i].classList.add('textoAnimado');
+            parrafoHexagrama3[i].classList.add('estirado');
         } else if (arrayInvertidoParaImpresion[i] == 7) {
             parrafoHexagrama3[i].innerHTML = '---------------';
-            parrafoHexagrama3[i].classList.add('textoAnimado');
+            parrafoHexagrama3[i].classList.add('estirado');
         } else if (arrayInvertidoParaImpresion[i] == 8) {
             parrafoHexagrama3[i].innerHTML = '------- -------';
-            parrafoHexagrama3[i].classList.add('textoAnimado');
+            parrafoHexagrama3[i].classList.add('estirado');
         }
     }
 
@@ -266,16 +268,16 @@ function insertarTooltip(cadenaTipo, numero) {
     cadenaPrimerosDosCaracteresNumero = parseInt(cadenaPrimerosDosCaracteres, 10);
     if (numero === 1) {
         tooltip1.innerHTML = arrayTooltips[cadenaPrimerosDosCaracteresNumero - 1];
-        tooltip1.classList.add('estirado');
         tooltip1.classList.remove('tooltiptextHide');
+        tooltip1.classList.add('estirado');
     } else if (numero === 2) {
         tooltip2.innerHTML = arrayTooltips[cadenaPrimerosDosCaracteresNumero - 1];
-        tooltip2.classList.add('estirado');
         tooltip2.classList.remove('tooltiptextHide');
+        tooltip2.classList.add('estirado');
     } else if (numero === 3) {
         tooltip3.innerHTML = arrayTooltips[cadenaPrimerosDosCaracteresNumero - 1]; //Para el tooltip 3
-        tooltip3.classList.add('estirado');
         tooltip3.classList.remove('tooltiptextHide');
+        tooltip3.classList.add('estirado');
     }
 
     //////////////////////////////////////////////////////////
@@ -285,7 +287,7 @@ function insertarTooltip(cadenaTipo, numero) {
         valorCeldaNumero[i] = celdasNumeros[i].innerHTML;
         if (valorCeldaNumero[i] == cadenaPrimerosDosCaracteresNumero) {
             celdasNumeros[i].classList.add('TablaNumerosSelected');
-            
+
             //Validacion de las celdas.
             console.log("El valor de la celda es " + i);
             contador = contador + 1;
@@ -296,7 +298,7 @@ function insertarTooltip(cadenaTipo, numero) {
     return cadenaPrimerosDosCaracteresNumero, valorCeldaNumero, selectedCelda;
 }
 
-function eliminarElDisenoDeLasCeldas(){
+function eliminarElDisenoDeLasCeldas() {
 
 }
 //Sección 5 // Eliminado de los componenetes
@@ -309,6 +311,7 @@ function borrarLinea() {
     noMutante.pop();
     contadorDeParrafos++;
     contadorNoMutante--;
+    parrafoHexagrama1[6].innerHTML = '';
     if (contadorDeParrafos == 5 && contadorNoMutante == 0) {
         botonEliLinea.disabled = true;//Deshabilitar boton de eliminar linea
         botonEliLinea.classList.add('inactiveButton');//Cambiar color boton de eliminar linea
@@ -317,6 +320,12 @@ function borrarLinea() {
     } else if (contadorDeParrafos == 0 && contadorNoMutante == 5) {
         borrarHexagramaDos();
         borrarHexagramaTres();
+    }
+
+    for (k = 0; k <= 6; k++) {
+        parrafoHexagrama1[k].classList.remove('estirado');
+        parrafoHexagrama2[k].classList.remove('estirado');
+        parrafoHexagrama3[k].classList.remove('estirado');
     }
 
     tooltip1.classList.add('tooltiptextHide');
@@ -332,7 +341,7 @@ function borrarLinea() {
             celdasNumeros[selectedCelda[selectedCelda.length - 2]].classList.remove('TablaNumerosSelected');
         }
     }
-    
+
 }
 
 function borrarHexagramaUno() {
@@ -390,4 +399,10 @@ function borrarHexagrama() {
     borrarHexagramaUno();
     borrarHexagramaDos();
     borrarHexagramaTres();
+
+    for (k = 0; k <= 6; k++) {
+        parrafoHexagrama1[k].classList.remove('estirado');
+        parrafoHexagrama2[k].classList.remove('estirado');
+        parrafoHexagrama3[k].classList.remove('estirado');
+    }
 }
