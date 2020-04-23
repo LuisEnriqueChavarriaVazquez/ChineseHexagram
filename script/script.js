@@ -78,31 +78,31 @@ function insertarElementosEnElHexagramaUno(valorTotalDeLineaDeHexagrama) {
     botonParaBorrarHexagrama.classList.remove('inactiveButton');
     if (valorTotalDeLineaDeHexagrama == 6) {
         noMutante[contadorNoMutante] = 6;
-        parrafoHexagrama1[contadorDeParrafos].innerHTML = '-------X-------'; // valor de 6
+        parrafoHexagrama1[contadorDeParrafos].appendChild(document.createTextNode('-------X-------')); // valor de 6
         parrafoHexagrama1[contadorDeParrafos].classList.add('estirado');
     } else if (valorTotalDeLineaDeHexagrama == 7) {
         noMutante[contadorNoMutante] = 7;
-        parrafoHexagrama1[contadorDeParrafos].innerHTML = '-----------------';  // valor de 7 o de 9 sin el 0
+        parrafoHexagrama1[contadorDeParrafos].appendChild(document.createTextNode('-----------------'));  // valor de 7 o de 9 sin el 0
         parrafoHexagrama1[contadorDeParrafos].classList.add('estirado');
     } else if (valorTotalDeLineaDeHexagrama == 8) {
         noMutante[contadorNoMutante] = 8;
-        parrafoHexagrama1[contadorDeParrafos].innerHTML = '-------- --------'; // valor de 8 o de 6 sin la x
+        parrafoHexagrama1[contadorDeParrafos].appendChild(document.createTextNode('-------- --------')); // valor de 8 o de 6 sin la x
         parrafoHexagrama1[contadorDeParrafos].classList.add('estirado');
     } else if (valorTotalDeLineaDeHexagrama == 9) {
         noMutante[contadorNoMutante] = 9;
-        parrafoHexagrama1[contadorDeParrafos].innerHTML = '-------O-------'; // valor de 9
+        parrafoHexagrama1[contadorDeParrafos].appendChild(document.createTextNode('-------O-------')); // valor de 9
         parrafoHexagrama1[contadorDeParrafos].classList.add('estirado');
     }
 
     //Aqui pondremos que tipo de Hexagrama es
     if (contadorDeParrafos == 0) {
         if (noMutante.includes(6) || noMutante.includes(9)) {
-            parrafoHexagrama1[6].innerHTML = '' // EN CASO DE SER MUTANTE
+            parrafoHexagrama1[6].appendChild(document.createTextNode('')); // EN CASO DE SER MUTANTE
             insertarElementosEnElHexagramaDos(noMutante);
 
         } else {
             var revisionTipo = evaluarTipoHexagrama(noMutante)
-            parrafoHexagrama1[6].innerHTML = revisionTipo; // El tipo de HEXAGRAMA EN CASO DE SER NO MUTANTE
+            parrafoHexagrama1[6].appendChild(document.createTextNode(revisionTipo)); // El tipo de HEXAGRAMA EN CASO DE SER NO MUTANTE
             parrafoHexagrama1[6].classList.add('estirado');
             insertarTooltip(revisionTipo, 1) // Insercion del tooltip
         }
@@ -122,23 +122,23 @@ function insertarElementosEnElHexagramaDos(noMutante) {
     nuevoArrayNoMutanteInvertido = copiaNoMutante.reverse();
     for (var i = 0; i <= 5; i++) {
         if (nuevoArrayNoMutanteInvertido[i] == 6) {
-            parrafoHexagrama2[i].innerHTML = '------- -------';
+            parrafoHexagrama2[i].appendChild(document.createTextNode('------- -------'));
             parrafoHexagrama2[i].classList.add('estirado');
         } else if (nuevoArrayNoMutanteInvertido[i] == 9) {
-            parrafoHexagrama2[i].innerHTML = '---------------';
+            parrafoHexagrama2[i].appendChild(document.createTextNode('---------------'));
             parrafoHexagrama2[i].classList.add('estirado');
         } else if (nuevoArrayNoMutanteInvertido[i] == 7) {
-            parrafoHexagrama2[i].innerHTML = '---------------';
+            parrafoHexagrama2[i].appendChild(document.createTextNode('---------------'));
             parrafoHexagrama2[i].classList.add('estirado');
         } else if (nuevoArrayNoMutanteInvertido[i] == 8) {
-            parrafoHexagrama2[i].innerHTML = '------- -------';
+            parrafoHexagrama2[i].appendChild(document.createTextNode('------- -------'));
             parrafoHexagrama2[i].classList.add('estirado');
         }
     }
 
 
     var revisionTipo = evaluarTipoHexagrama(nuevoArrayNoMutanteInvertido.reverse())
-    parrafoHexagrama2[6].innerHTML = revisionTipo; // El tipo de HEXAGRAMA EN CASO DE SER NO MUTANTE
+    parrafoHexagrama2[6].appendChild(document.createTextNode(revisionTipo)); // El tipo de HEXAGRAMA EN CASO DE SER NO MUTANTE
     parrafoHexagrama2[6].classList.add('estirado');
 
     insertarElementosEnElHexagramaTres(nuevoArrayNoMutanteInvertido);
@@ -160,7 +160,7 @@ function insertarElementosEnElHexagramaTres(nuevoArrayNoMutanteInvertido) {
     }
 
     var revisionTipo = evaluarTipoHexagrama(arrayCodigoRenovado)
-    parrafoHexagrama3[6].innerHTML = revisionTipo; // El tipo de HEXAGRAMA EN CASO DE SER NO MUTANTE
+    parrafoHexagrama3[6].appendChild(document.createTextNode(revisionTipo)); // El tipo de HEXAGRAMA EN CASO DE SER NO MUTANTE
     parrafoHexagrama3[6].classList.add('estirado');
     console.log(nuevoArrayNoMutanteInvertido);
 
@@ -168,16 +168,16 @@ function insertarElementosEnElHexagramaTres(nuevoArrayNoMutanteInvertido) {
     arrayInvertidoParaImpresion = nuevoArrayNoMutanteInvertido.reverse();
     for (var i = 0; i <= 5; i++) {
         if (arrayInvertidoParaImpresion[i] == 6) {
-            parrafoHexagrama3[i].innerHTML = '---------------';
+            parrafoHexagrama3[i].appendChild(document.createTextNode('---------------'));
             parrafoHexagrama3[i].classList.add('estirado');
         } else if (arrayInvertidoParaImpresion[i] == 9) {
-            parrafoHexagrama3[i].innerHTML = '------- -------';
+            parrafoHexagrama3[i].appendChild(document.createTextNode('------- -------'));
             parrafoHexagrama3[i].classList.add('estirado');
         } else if (arrayInvertidoParaImpresion[i] == 7) {
-            parrafoHexagrama3[i].innerHTML = '---------------';
+            parrafoHexagrama3[i].appendChild(document.createTextNode('---------------'));
             parrafoHexagrama3[i].classList.add('estirado');
         } else if (arrayInvertidoParaImpresion[i] == 8) {
-            parrafoHexagrama3[i].innerHTML = '------- -------';
+            parrafoHexagrama3[i].appendChild(document.createTextNode('------- -------'));
             parrafoHexagrama3[i].classList.add('estirado');
         }
     }
@@ -188,14 +188,14 @@ function insertarElementosEnElHexagramaTres(nuevoArrayNoMutanteInvertido) {
 
 //Sección 3 // Asignar un tipo de HEXAGRAMA
 
-var tiposHexagramas = ["Ch'len <br> 乾為天", "K'un <br> 坤為地", "Chun <br> 水雷屯", "Meng <br> 山水蒙", "Hsü <br> 水天需", "Sung <br> 天水訟", "Shih <br> 地水師",
-    "Pi <br> 水地比", "Hsiao Ch'u <br> 風天小畜", "Lü <br> 天泽履", "T'ai <br> 地天泰", "P'i <br> 天地否", "T'ung Jen <br> 天火同人", "Ta Yu <br> 火天大有", "Ch'ien <br> 地山謙",
-    "Yü <br> 雷地豫", "Sui <br> 泽雷随", "Ku <br> 山風蠱", "Lin <br> 地泽臨", "Kuan <br> 風地观", "Shin Ho <br> 火雷噬嗑", "Pi <br> 山火賁", "Po <br> 山地剥", "Fu <br> 地雷復",
-    "Wu Wang <br> 天雷无妄", "Ta Ch'u <br> 山天大畜", "I <br> 山雷頤", "Ta Kuo <br> 泽風大過", "K'an <br> 坎為水", "Li <br> 離為火", "Hsien <br> 泽山咸", "Heng <br> 雷風恒",
-    "Tun <br> 天山遯", "Ta Chuang <br> 雷天大壮", "Chin <br> 火地晋", "Ming I <br> 地火明夷", "Chia Jen <br> 風火家人", "K'uei <br> 火泽睽", "Chien <br> 水山蹇", "Hsieh <br> 雷水解",
-    "Sun <br> 山泽損", "I <br> 風雷益", "Kuai <br> 泽天夬", "Kou <br> 天風姤", "Ts'ui <br> 泽地萃", "Sheng <br> 地風升", "K'un <br> 泽水困", "Ching <br> 水風井", "Ko <br> 泽火革",
-    "Ting <br> 火風鼎", "Chen <br> 震為雷", "Ken <br> 艮為山", "Chien <br> 風山漸", "Kuei Mei <br> 雷泽归妹", "Feng <br> 雷火豊", "Lü <br> 火山旅", "Sun <br> 巽為風", "Tui <br> 兌為泽",
-    "Huan <br> 風水渙", "Chieh <br> 水泽節", "Chung Fu <br> 風泽中孚", "Hsiao Kuo <br> 雷山小過", "Chi Chi <br> 水火既济", "Wei Chi <br> 火水未济"];
+var tiposHexagramas = ["Ch'len乾為天", "K'un坤為地", "Chun水雷屯", "Meng山水蒙", "Hsü水天需", "Sung天水訟", "Shih地水師",
+    "Pi水地比", "Hsiao Ch'u風天小畜", "Lü天泽履", "T'ai地天泰", "P'i天地否", "T'ung Jen天火同人", "Ta Yu火天大有", "Ch'ien地山謙",
+    "Yü雷地豫", "Sui泽雷随", "Ku山風蠱", "Lin地泽臨", "Kuan風地观", "Shin Ho火雷噬嗑", "Pi山火賁", "Po山地剥", "Fu地雷復",
+    "Wu Wang天雷无妄", "Ta Ch'u山天大畜", "I山雷頤", "Ta Kuo泽風大過", "K'an坎為水", "Li離為火", "Hsien泽山咸", "Heng雷風恒",
+    "Tun天山遯", "Ta Chuang雷天大壮", "Chin火地晋", "Ming I地火明夷", "Chia Jen風火家人", "K'uei火泽睽", "Chien水山蹇", "Hsieh雷水解",
+    "Sun山泽損", "I風雷益", "Kuai泽天夬", "Kou天風姤", "Ts'ui泽地萃", "Sheng地風升", "K'un泽水困", "Ching水風井", "Ko泽火革",
+    "Ting火風鼎", "Chen震為雷", "Ken艮為山", "Chien風山漸", "Kuei Mei雷泽归妹", "Feng雷火豊", "Lü火山旅", "Sun巽為風", "Tui兌為泽",
+    "Huan風水渙", "Chieh水泽節", "Chung Fu風泽中孚", "Hsiao Kuo雷山小過", "Chi Chi水火既济", "Wei Chi火水未济"];
 
 var arrayCodigos = [];
 var arrayCodigosFull = ["FFFFFF", "IIIIII", "FIIIFI", "IFIIIF", "FFFIFI", "IFIFFF", "IFIIII", "IIIIFI", "FFFIFF", "FFIFFF"
@@ -298,9 +298,7 @@ function insertarTooltip(cadenaTipo, numero) {
     return cadenaPrimerosDosCaracteresNumero, valorCeldaNumero, selectedCelda;
 }
 
-function eliminarElDisenoDeLasCeldas() {
 
-}
 //Sección 5 // Eliminado de los componenetes
 
 //Borrar linea de primer hexagrama
